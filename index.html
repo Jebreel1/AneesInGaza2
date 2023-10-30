@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyNoteBook - A Simple Notes App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">MyNoteBook</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="navButtons d-flex" role="search">
+                    <a href="/login"><button class="btn btn-primary mx-2" type="submit">Login</button></a>
+                    <a href="/signup"><button class="btn btn-primary mx-2" type="submit">Signup</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Add A Note:</h1>
+        <div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="titleHelp">
+                <div id="titleHelp" class="form-text">Try to add a title.</div>
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">Description</label>
+                <textarea type="text" class="form-control" id="desc"></textarea>
+            </div>
+
+            <button id="submit" type="submit" class="btn btn-primary my-4">Submit</button>
+        </div>
+
+        <!-- mynotes -->
+        <div class="mynotes row">
+        </div>
+
+
+        <h1>Add An Aneesian:</h1>
+        <div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="namePerson" aria-describedby="nameHelp">
+                <div id="nameHelp" class="form-text">Try to add a name.</div>
+            </div>
+            <div class="mb-3">
+                <label for="well" class="form-label">Age</label>
+                <input type="text" class="form-control" id="age">
+            </div>
+            <div class="mb-3">
+                <label for="family" class="form-label">Sex</label>
+                <input type="text" class="form-control" id="sex">
+            </div>
+            <div class="mb-3">
+                <label for="house" class="form-label">Role</label>
+                <input type="text" class="form-control" id="role">
+            </div>
+            <div class="mb-3">
+                <label for="healthy" class="form-label">Facebook</label>
+                <input type="text" class="form-control" id="facebook">
+            </div>
+            <button id="submitAneesian" type="submit" class="btn btn-primary my-4">Submit Aneesian</button>
+        </div>
+
+        <!-- List of the people -->
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Role</th>
+                <th scope="col">Facebook</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="aneesianTable">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr> -->
+            </tbody>
+          </table>
+
+        <h1>Add A Member:</h1>
+        <div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                <div id="nameHelp" class="form-text">Try to add a name.</div>
+            </div>
+            <div class="mb-3">
+                <label for="well" class="form-label">well</label>
+                <input type="text" class="form-control" id="well">
+            </div>
+            <div class="mb-3">
+                <label for="family" class="form-label">family</label>
+                <input type="text" class="form-control" id="family">
+            </div>
+            <div class="mb-3">
+                <label for="house" class="form-label">house</label>
+                <input type="text" class="form-control" id="house">
+            </div>
+            <div class="mb-3">
+                <label for="healthy" class="form-label">healthy</label>
+                <input type="text" class="form-control" id="healthy">
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">time</label>
+                <input type="text" class="form-control" id="time">
+            </div>
+            <button id="submitMember" type="submit" class="btn btn-primary my-4">Submit Member</button>
+        </div>
+
+         <!-- Tables -->
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Well</th>
+                <th scope="col">Family's Well</th>
+                <th scope="col">House</th>
+                <th scope="col">Healty</th>
+                <th scope="col">Status Time</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="myTable">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr> -->
+            </tbody>
+          </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+        // POST method implementation:
+        async function postData(url = "", data = {}) {
+   
+
+            // Default options are marked with *
+            const response = await fetch(url, {
+                method: "POST", 
+                headers: {
+                    "Content-Type": "application/json",
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: JSON.stringify(data), // body data type must match "Content-Type" header
+            });
+            let rdata = await response.json();
+            return rdata;
+
+        }
+
+
+        //Fetch all the data
+// Start fetchNotes()
+    //     const fetchNotes = ()=> {
+    //     const user = JSON.parse(localStorage.getItem('user'));
+
+    //     if(user && user.email) {
+    //         userStatus = "member";
+    //         let memberContainer = document.querySelector(".myTable");
+
+            
+    //         memberContainer.innerHTML = "";
+
+    //         const members = postData('/getnotes', {email: user.email})
+    //         members.then((members)=>{
+
+    //         //Populate the notes
+    //             // console.log("Notes: ", notes.notes);
+    //             let number = 1;
+     
+    //             members.members.forEach(element => {
+
+    //                 let member = `
+    //                 <tr>
+    //             <th scope="row">${number}</th>
+    //             <td>${element.name}</td>
+    //             <td>${element.well}</td>
+    //             <td>${element.family}</td>
+    //             <td>${element.house}</td>
+    //             <td>${element.healthy}</td>
+    //             <td>${element.time}</td>
+    //           </tr>`;
+  
+    //             memberContainer.innerHTML += member;
+    //             number = number +1;
+    //             });
+
+                
+    //             })
+
+
+    //             //Customize navbar buttons
+    //             let navContainer= document.querySelector(".navButtons");
+    //             navContainer.innerHTML = "";
+    //             // console.log("Customizing navbar buttons.");
+    //             let navb = `
+    //                 <button class="btn btn-primary mx-2" type="submit" id="logout">logout</button>
+    //             `;
+    //             navContainer.innerHTML += navb;
+    //         } else {
+    //             alert("Please login first.")
+    //             window.location = "/login"
+    //         }
+    //     }
+    // fetchNotes();
+
+// End fetchNotes()
+
+    //Fetch all the members
+    const fetchMembers = ()=> {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if(user && user.email) {
+            userStatus = "member";
+            let memberContainer = document.querySelector(".myTable");
+            
+            memberContainer.innerHTML = "";
+
+            const members = postData('/getmembers', {email: user.email})
+            members.then((members)=>{
+
+            //Populate the notes
+                // console.log("Notes: ", notes.notes);
+                let number = 1;
+     
+                members.members.forEach(element => {
+
+            //         let note = `
+            //     <div class="card mx-2" style="width: 18rem;">
+            //     <div class="card-body">
+            //         <h5 >${element.title}</h5>
+            //         <h6 class="card-subtitle mb-2 text-body-secondary">Note Description</h6>
+            //         <p class="card-text">${element.desc}</p>
+            //         <button onclick="removeItems(event)" class=" btn btn-primary mx-2" id="${element._id}">Delete</button>
+            //     </div>
+            
+            // </div>
+            //     `;
+
+                    let member = `
+                    <tr>
+                <th scope="row">${number}</th>
+                <td>${element.name} <button onclick="updateField(event)" class="name" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.well} <button onclick="updateField(event)" class="well" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.family} <button onclick="updateField(event)" class="family" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.house} <button onclick="updateField(event)" class="house" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.healthy} <button onclick="updateField(event)" class="healthy" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.time} <button onclick="updateField(event)" class="time" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td><button onclick="updateMembers(event)" class=" btn btn-primary mx-2" id="${element._id}">Update All</button></td>
+              </tr>
+              `;
+  
+                memberContainer.innerHTML += member;
+                number = number +1;
+                });                
+                })
+
+                //Customize navbar buttons
+                let navContainer= document.querySelector(".navButtons");
+                navContainer.innerHTML = "";
+                // console.log("Customizing navbar buttons.");
+                let navb = `
+                    <button class="btn btn-primary mx-2" type="submit" id="logout">logout</button>
+                `;
+                navContainer.innerHTML += navb;
+            } else {
+                alert("Please login first.")
+                window.location = "/share"
+            }
+        }
+    fetchMembers();
+
+
+    //Fetch all the Anees people
+    const fetchPeople = ()=> {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if(user && user.email) {
+            userStatus = "person";
+            let aneesianContainer = document.querySelector(".aneesianTable");
+            
+            aneesianContainer.innerHTML = "";
+
+            const persons = postData('/getpersons', {email: user.email})
+            persons.then((persons)=>{
+
+            //Populate the notes
+                // console.log("Notes: ", notes.notes);
+                let number = 1;
+     
+                persons.persons.forEach(element => {
+
+                let person = `
+                    <tr>
+                <th scope="row">${number}</th>
+                <td>${element.name} <button onclick="updateFieldPeople(event)" class="name" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.age} <button onclick="updateFieldPeople(event)" class="age" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.sex} <button onclick="updateFieldPeople(event)" class="sex" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.role} <button onclick="updateFieldPeople(event)" class="role" style="font-size: 15px" id="${element._id}">✏</button></td>
+                <td>${element.facebook} <button onclick="updateFieldPeople(event)" class="facebook" style="font-size: 15px" id="${element._id}">✏</button></td>
+              </tr>
+              `;
+                    // <td><button onclick="updateMembers(event)" class=" btn btn-primary mx-2" id="${element._id}">Update</button></td>
+
+                aneesianContainer.innerHTML += person;
+                number = number +1;
+                });                
+                })
+
+
+            } else {
+                alert("Please login first.")
+                window.location = "/share"
+                        }
+        }
+    fetchPeople();
+
+
+        //Add a note: Add a click listener for Submit
+        let submit = document.getElementById("submit");
+        submit.addEventListener("click", async () =>{
+            let title = document.getElementById("title").value;
+            let desc = document.getElementById("desc").value;
+            let email = JSON.parse(localStorage.getItem("user"))?.email;
+            //console.log("Submitting this note for :", {title, desc, email});
+
+            let resp = await postData("/addnote", {title, desc, email});
+            //console.log(resp);
+            if(resp.success) {
+                alert("Note created!");
+                document.getElementById("title").value = "";
+                document.getElementById("desc").value= "";
+                //fetchNotes();
+            }
+        })
+
+        //Add a member: Add a click listener for submitMember
+        let submitMember = document.getElementById("submitMember");
+        submitMember.addEventListener("click", async () =>{
+            let name = document.getElementById("name").value;
+            let well = document.getElementById("well").value;
+            let family = document.getElementById("family").value;
+            let house = document.getElementById("house").value;
+            let healthy= document.getElementById("healthy").value;
+            let time = document.getElementById("time").value;
+            //console.log("Submitting this note for :", {title, desc, email});
+            if (name && well && family && house && healthy && time) {
+            let resp = await postData("/addmember", {name, well, family, house, healthy, time});
+            //console.log(resp);
+            if(resp.success) {
+                alert("Member created!");
+                document.getElementById("name").value= "";
+                document.getElementById("well").value= "";
+                document.getElementById("family").value= "";
+                 document.getElementById("house").value= "";
+                 document.getElementById("healthy").value= "";
+                 document.getElementById("time").value = "";
+                fetchMembers();
+            }} else {
+                alert("Please fill all the entries.")
+            }
+        })
+
+        
+        //Add an Aneesian: Add a click listener for submitAneesian
+            let submitAneesian = document.getElementById("submitAneesian");
+            submitAneesian.addEventListener("click", async () =>{
+            let name = document.getElementById("namePerson").value;
+            let age = document.getElementById("age").value;
+            let sex = document.getElementById("sex").value;
+            let role = document.getElementById("role").value;
+            let facebook = document.getElementById("facebook").value;
+            //console.log("Submitting this note for :", {title, desc, email});
+            if (name && age && sex && role && facebook) {
+            let resp = await postData("/addaneesian", {name, age, sex, role, facebook});
+            //console.log(resp);
+            if(resp.success) {
+                alert("Aneesian Added!");
+                document.getElementById("namePerson").value= "";
+                document.getElementById("age").value= "";
+                document.getElementById("sex").value= "";
+                 document.getElementById("role").value= "";
+                 document.getElementById("facebook").value= "";
+                fetchPeople();
+            }} else {
+                alert("Please fill all the entries.")
+            }
+        })
+
+        //Delete a note
+        async function removeItems (event) {
+            //console.log(event.target.id); 
+            let deleteId = event.target.id;
+            console.log("Deleting a note with the id: ", {deleteId});
+
+            let resp = await postData("/deletenote", {deleteId});
+            console.log(resp);
+            if(resp.success) {
+                alert("Note deleted!");
+                //fetchNotes();
+            }
+        // }
+            }
+
+
+            //Update a member
+        async function updateMembers (event) {
+            //console.log(event.target.id); 
+            let updateId = event.target.id;
+            console.log("Updating a member with the id: ", {updateId});
+            let dname = event.target.name;
+            console.log(event.target.name);
+            let name = prompt("Name", dname);
+            let well = prompt("Well", event.target.well);
+            let family = prompt("Family", event.target.family);
+            let house = prompt("House", event.target.house);
+            let healthy = prompt("Healthy", event.target.healthy);
+            let time = prompt("Time", event.target.time);
+            
+            let resp = await postData("/updatemember", {updateId , name, well, family, house, healthy, time});
+            console.log(resp);
+            if(resp.success) {
+                alert("Member Updated!");
+                fetchMembers();
+            }
+        // }
+            }
+
+
+            // Update a field updateField
+            async function updateField (event) {
+            //console.log(event.target.id); 
+            let updateId = event.target.id;
+            let field = event.target.className;
+
+            // console.log("Updating a member with the id: ", {updateId});
+            // console.log("Updating the field: ", {field});
+
+            let newInput = prompt("Your edit");
+            if (newInput) {
+            let resp = await postData("/updatefield", {updateId , field, newInput});
+            console.log(resp);
+            if(resp.success) {
+                alert("Field Updated!");
+                fetchMembers();
+            }
+            }
+            }
+
+            // Update a field updateFieldPeople
+            async function updateFieldPeople (event) {
+            //console.log(event.target.id); 
+            let updateId = event.target.id;
+            let field = event.target.className;
+
+            // console.log("Updating a member with the id: ", {updateId});
+            // console.log("Updating the field: ", {field});
+
+            let newInput = prompt("Your edit");
+            if (newInput) {
+            let resp = await postData("/updatefieldpeople", {updateId , field, newInput});
+            console.log(resp);
+            if(resp.success) {
+                alert("Field Updated!");
+                fetchPeople();
+            }
+            }
+            }
+
+        //logout
+        let logout = document.getElementById("logout");
+        logout.addEventListener("click", async () =>{
+            let email = JSON.parse(localStorage.getItem("user"))?.email;
+            console.log("Trying to logout");
+            let resp = await postData("/logout", {email})
+            if(resp.success) {
+                alert("You are now logged out!");
+                localStorage.removeItem("user");
+                window.location = "/login";
+            }   
+        })
+
+    </script>
+
+
+</body>
+
+</html>
