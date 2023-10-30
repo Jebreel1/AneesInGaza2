@@ -21,7 +21,9 @@ let mongoUser = process.env.MONGOUSER
 let mongoPassword = process.env.MONGOPASSWORD
 
 let mongoURL= 'mongodb+srv://' + mongoUser + ':' + mongoPassword + '@cluster0.ns9aohf.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect(mongoURL);
+mongoose.connect(mongoURL)
+.then(()=>console.log('Connected to mongoose'))
+.catch(e=>console.log(e));
 
 
       const db = mongoose.connection;
